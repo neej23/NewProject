@@ -1,0 +1,197 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #121212;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px; /* Space for fixed navbar */
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--bg-light);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1050;
+}
+
+body.dark-mode .navbar {
+  background-color: var(--bg-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .navbar-brand {
+  color: var(--text-dark);
+}
+
+.navbar-brand span {
+  color: #0d6efd;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-link {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+body.dark-mode .btn-link {
+  color: var(--text-dark);
+}
+
+.btn-link:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #6f42c1, #20c997);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+  padding: 4rem 2rem;
+  z-index: 1060;
+  transition: right 0.4s ease-in-out;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.dark-mode .fullscreen-menu {
+  background: rgba(18, 18, 18, 0.95);
+}
+
+.fullscreen-menu.show {
+  right: 0;
+}
+
+.fullscreen-menu a {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin: 1rem 0;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fullscreen-menu a:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
+}
+
+.close-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-menu:hover {
+  transform: rotate(90deg);
+}
+
+/* Hero Section */
+.hero-bg {
+  background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)),
+    url("https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
+    center center / cover no-repeat;
+  color: #fff;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1rem;
+  margin: 1rem 0;
+}
+
+body.dark-mode .stat-card {
+  background: rgba(30, 30, 30, 0.85);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+}
+
+.carousel-img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.contact-section {
+  background: linear-gradient(120deg, #f8fafc 60%, #e9ecef 100%);
+}
+
+body.dark-mode .contact-section {
+  background: linear-gradient(120deg, #1a1a1a 60%, #2d2d2d 100%);
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 1.5rem 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+}
