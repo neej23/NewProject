@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>.corner-box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin: 50px auto;
+}
+
+/* Top-left corner */
+.corner-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  width: 30px;
+  height: 30px;
+}
+
+/* Bottom-right corner */
+.corner-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid #000;
+  border-right: 4px solid #000;
+  width: 30px;
+  height: 30px;
+}
+</style>
+</head>
+<body>
+    <div class="corner-box">
+  <p>Your content here</p>
+</div>
+
+</body>
+</html>
