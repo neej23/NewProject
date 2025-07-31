@@ -10,21 +10,23 @@
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
+<header class="m-main-header">
+        <a href="/" class="anchor"><img class="m-main-logo"" src="/Resources/images/transparent-Photoroom.png" alt="Sai Consltant logo"> </a>
+    </header>
 <!-- Header/Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
   <div class="container-fluid px-4">
     <a class="navbar-brand fw-bold" href="#">
-      <span>STRUCTURA</span> | Structural Engineering
+      <span>STRUCTURAL</span> | Structural Engineering
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <div class="d-flex align-items-center gap-3">
-        <button class="btn btn-link dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+        <!-- <button class="btn btn-link dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
           <i class="bi bi-moon-stars"></i>
-        </button>
+        </button> -->
         <button class="btn btn-link" id="fullscreenMenuToggle" title="Open Fullscreen Menu">
           <i class="bi bi-list"></i>
         </button>
@@ -35,7 +37,7 @@
 
 <!-- Fullscreen Menu -->
 <div class="fullscreen-menu d-flex flex-column align-items-start" id="fullscreenMenu">
-  <button class="close-menu" id="closeMenuBtn">×</button>
+  <button class="close-menu" id="closeMenuBtn"> </button>
   <a class="nav-link fs-4" href="#home">Home</a>
   <a class="nav-link fs-4" href="#about">About</a>
   <a class="nav-link fs-4" href="#services">Services</a>

@@ -10,12 +10,38 @@ body {
   color: var(--text-light);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 80px;
+  /* Space for fixed navbar */
 }
 
 body.dark-mode {
   background-color: var(--bg-dark);
   color: var(--text-dark);
+}
+
+.anchor {
+  margin: 0;
+  padding: 0;
+}
+
+.m-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  padding: 0;
+}
+
+.m-main-logo {
+  display: block;
+  width: 90px;
+  margin-top: 25px;
+  margin-left: 30px;
 }
 
 /* Navbar Styles */
@@ -24,7 +50,7 @@ body.dark-mode {
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  z-index: 1050;
+  z-index: 0;
 }
 
 body.dark-mode .navbar {
@@ -95,9 +121,17 @@ body.dark-mode .btn-link {
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body.dark-mode .fullscreen-menu {
@@ -141,8 +175,7 @@ body.dark-mode .fullscreen-menu {
 /* Hero Section */
 .hero-bg {
   background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)),
-    url("https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
-    center center / cover no-repeat;
+    url("https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") center center / cover no-repeat;
   color: #fff;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -190,7 +223,7 @@ body.dark-mode .contact-section {
   .navbar {
     padding: 1.5rem 0;
   }
-  
+
   .navbar-brand {
     font-size: 1.75rem;
   }
