@@ -1,34 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Bootstrap collapse for navbar
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize Bootstrap collapse
   const navbarCollapse = new bootstrap.Collapse(document.getElementById('navbarNav'), {
     toggle: false
   });
 
-  // Fullscreen menu functionality
   const fullscreenMenuToggle = document.getElementById('fullscreenMenuToggle');
   const closeMenuBtn = document.getElementById('closeMenuBtn');
   const fullscreenMenu = document.getElementById('fullscreenMenu');
 
+  // ✅ Open fullscreen menu
   if (fullscreenMenuToggle && fullscreenMenu) {
-    fullscreenMenuToggle.addEventListener('click', function() {
+    fullscreenMenuToggle.addEventListener('click', function () {
+      console.log('Fullscreen menu toggle clicked ✅');
       fullscreenMenu.classList.add('show');
       document.body.style.overflow = 'hidden';
       navbarCollapse.hide();
     });
   }
 
+  // ✅ Close on "X" button
   if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', function() {
+    closeMenuBtn.addEventListener('click', function () {
       fullscreenMenu.classList.remove('show');
       document.body.style.overflow = '';
     });
   }
 
-  // Close menu when clicking on links
+  // ✅ Close on nav link click
   const menuLinks = document.querySelectorAll('.fullscreen-menu a');
-  if (menuLinks) {
+  if (menuLinks.length) {
     menuLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         fullscreenMenu.classList.remove('show');
         document.body.style.overflow = '';
       });
@@ -36,16 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// ✅ Dark mode toggle
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   const darkToggleIcon = document.querySelector('.dark-toggle i');
   if (darkToggleIcon) {
-    if (document.body.classList.contains('dark-mode')) {
-      darkToggleIcon.classList.remove('bi-moon-stars');
-      darkToggleIcon.classList.add('bi-sun');
-    } else {
-      darkToggleIcon.classList.remove('bi-sun');
-      darkToggleIcon.classList.add('bi-moon-stars');
-    }
+    darkToggleIcon.classList.toggle('bi-moon-stars');
+    darkToggleIcon.classList.toggle('bi-sun');
   }
 }

@@ -10,27 +10,26 @@
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<header class="m-main-header">
-        <a href="/" class="anchor"><img class="m-main-logo"" src="/Resources/images/transparent-Photoroom.png" alt="Sai Consltant logo"> </a>
-    </header>
-<!-- Header/Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
   <div class="container-fluid px-4">
-    <a class="navbar-brand fw-bold" href="#">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold me-auto" href="#">
       <span>STRUCTURAL</span> | Structural Engineering
+      <!-- <a href="/" class="anchor" style="background-color: aqua;"><img class=" "" src="/Resources/images/transparent-Photoroom.png" alt="Sai Consltant logo"> </a> -->
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <div class="d-flex align-items-center gap-3">
-        <!-- <button class="btn btn-link dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
-          <i class="bi bi-moon-stars"></i>
-        </button> -->
-        <button class="btn btn-link" id="fullscreenMenuToggle" title="Open Fullscreen Menu">
-          <i class="bi bi-list"></i>
-        </button>
-      </div>
+
+    <!-- Always visible buttons: Dark mode + Fullscreen -->
+    <div class="d-flex align-items-center gap-2 order-lg-3">
+      <button class="btn btn-link dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+        <i class="bi bi-moon-stars"></i>
+      </button>
+      <button class="btn btn-link" id="fullscreenMenuToggle" title="Open Fullscreen Menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end order-lg-2" id="navbarNav">
     </div>
   </div>
 </nav>
@@ -148,10 +147,10 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" aria-label="Previous Slide">
         <span class="carousel-control-prev-icon"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" aria-label="Next Slide">
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>

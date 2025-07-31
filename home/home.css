@@ -10,8 +10,7 @@ body {
   color: var(--text-light);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  padding-top: 80px;
-  /* Space for fixed navbar */
+  padding-top: 80px; /* Space for fixed navbar */
 }
 
 body.dark-mode {
@@ -19,38 +18,21 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
-.anchor {
-  margin: 0;
-  padding: 0;
-}
-
-.m-main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  z-index: 900;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110px;
-  padding: 0;
-}
-
 .m-main-logo {
   display: block;
-  width: 90px;
-  margin-top: 25px;
-  margin-left: 30px;
+  width: 8%;
+  margin-top: 5%;
+  margin-left: 10%;
 }
 
-/* Navbar Styles */
+/* ================================
+   Navbar
+================================ */
 .navbar {
   background-color: var(--bg-light);
-  padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  z-index: 0;
+  z-index: 1000;
 }
 
 body.dark-mode .navbar {
@@ -78,6 +60,9 @@ body.dark-mode .navbar-brand {
 .navbar-toggler {
   border: none;
   padding: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  background: transparent;
 }
 
 .navbar-toggler:focus {
@@ -90,6 +75,7 @@ body.dark-mode .navbar-brand {
   padding: 0.5rem;
   background: none;
   border: none;
+  font-size: 1.25rem;
 }
 
 body.dark-mode .btn-link {
@@ -101,7 +87,9 @@ body.dark-mode .btn-link {
   transform: scale(1.1);
 }
 
-/* Fullscreen Menu */
+/* ================================
+   Fullscreen Menu
+================================ */
 .fullscreen-menu {
   position: fixed;
   top: 0;
@@ -112,7 +100,7 @@ body.dark-mode .btn-link {
   background-size: 400% 400%;
   animation: gradientFlow 10s ease infinite;
   padding: 4rem 2rem;
-  z-index: 1060;
+  z-index: 2000;
   transition: right 0.4s ease-in-out;
   color: white;
   display: flex;
@@ -124,11 +112,9 @@ body.dark-mode .btn-link {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -153,14 +139,15 @@ body.dark-mode .fullscreen-menu {
 
 .fullscreen-menu a:hover {
   color: #0d6efd;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
+/* Close Button */
 .close-menu {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 2.5rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
@@ -168,11 +155,17 @@ body.dark-mode .fullscreen-menu {
   transition: transform 0.3s ease;
 }
 
+.close-menu::after {
+  content: '✕';
+}
+
 .close-menu:hover {
   transform: rotate(90deg);
 }
 
-/* Hero Section */
+/* ================================
+   Hero Section
+================================ */
 .hero-bg {
   background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)),
     url("https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") center center / cover no-repeat;
@@ -185,7 +178,9 @@ body.dark-mode .fullscreen-menu {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Cards */
+/* ================================
+   Cards
+================================ */
 .stat-card {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 1rem;
@@ -204,12 +199,18 @@ body.dark-mode .stat-card {
   margin-bottom: 1rem;
 }
 
+/* ================================
+   Carousel
+================================ */
 .carousel-img {
   height: 220px;
   object-fit: cover;
   border-radius: 0.5rem;
 }
 
+/* ================================
+   Contact Section
+================================ */
 .contact-section {
   background: linear-gradient(120deg, #f8fafc 60%, #e9ecef 100%);
 }
@@ -218,7 +219,9 @@ body.dark-mode .contact-section {
   background: linear-gradient(120deg, #1a1a1a 60%, #2d2d2d 100%);
 }
 
-/* Responsive adjustments */
+/* ================================
+   Responsive
+================================ */
 @media (min-width: 992px) {
   .navbar {
     padding: 1.5rem 0;
