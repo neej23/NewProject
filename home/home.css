@@ -547,3 +547,103 @@ body.dark-mode .contact-section {
 .img-box:hover .overlay-text {
   transform: translateY(0);
 }
+
+
+
+.service-wheel {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  background: #0d6efd;
+  color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.segment {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.segment img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.segment p {
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Positioning segments around the circle */
+.segment1 { top: 0; left: 50%; transform: translate(-50%, 0); }
+.segment2 { top: 20%; left: 90%; transform: translate(-50%, -50%); }
+.segment3 { top: 65%; left: 90%; transform: translate(-50%, -50%); }
+.segment4 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+.segment5 { top: 65%; left: 10%; transform: translate(-50%, -50%); }
+.segment6 { top: 20%; left: 10%; transform: translate(-50%, -50%); }
+
+@media (max-width: 767px) {
+  .service-wheel {
+    height: 400px;
+  }
+  .segment {
+    width: 80px;
+    height: 80px;
+  }
+  .center-circle {
+    width: 120px;
+    height: 120px;
+    font-size: 14px;
+  }
+}
+
+#wheel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.service-wheel {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+  margin: auto;
+}
+
+.segment-content {
+  transform: rotate(0   deg); /* this gets updated by GSAP */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
