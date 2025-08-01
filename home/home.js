@@ -39,19 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ✅ Dark mode toggle
- const text = document.getElementById('text');
+ const text = document.getElementById('services');
     const switchHeight = 1000; // the scroll height in px to trigger color switch
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > switchHeight) {
-        document.body.style.backgroundColor = 'black';
-        text.style.color = 'white';
+        document.body.style.backgroundColor = '#284160';
+        text.style.color = '';
       } else {
         document.body.style.backgroundColor = 'white';
         text.style.color = 'black';
       }
     });
-    
 
     toggleIcon.addEventListener('click', () => {
       const isOpen = menuOverlay.classList.toggle('show');
