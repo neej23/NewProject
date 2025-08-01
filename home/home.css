@@ -37,7 +37,7 @@ body {
   margin-top: 25px;
   margin-left: 30px;
 }
-
+/* 
 header {
   position: fixed;
   top: 0;
@@ -48,7 +48,7 @@ header {
   align-items: center;
   padding: 0;
   z-index: 1000;
-}
+} */
 
 .m-main-header {
   display: flex;
