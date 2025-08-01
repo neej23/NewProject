@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ✅ Dark mode toggle
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  const darkToggleIcon = document.querySelector('.dark-toggle i');
-  if (darkToggleIcon) {
-    darkToggleIcon.classList.toggle('bi-moon-stars');
-    darkToggleIcon.classList.toggle('bi-sun');
-  }
-}
-    const toggleIcon = document.getElementById('toggleIcon');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const menuItems = menuOverlay.querySelectorAll('li');
+ const text = document.getElementById('text');
+    const switchHeight = 1000; // the scroll height in px to trigger color switch
 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > switchHeight) {
+        document.body.style.backgroundColor = 'black';
+        text.style.color = 'white';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        text.style.color = 'black';
+      }
+    });
     
 
     toggleIcon.addEventListener('click', () => {

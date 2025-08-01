@@ -2,93 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clarity-Inspired Nav</title>
+  <title>Scroll Height Color Switch</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      height: 200vh; /* to allow scrolling */
+      background-color: white;
+      transition: background-color 0.3s ease;
     }
 
-    header {
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 30px;
-      border-bottom: 1px solid #ddd;
+    .content {
       position: fixed;
+      top: 40%;
       width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      color: #c59d5f;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
+      text-align: center;
+      font-size: 3rem;
+      color: black;
+      transition: color 0.3s ease;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <a href="#"><img src="https://www.clarityarts.com/resources/images/branding/logo_clarity-arts.svg" alt="Logo"></a>
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/what-we-do">What We Do</a></li>
-        <li><a href="/process">Process</a></li>
-        <li><a href="/bespoke">Bespoke</a></li>
-        <li><a href="/case-studies">Our Work</a></li>
-        <li><a href="/contact">Enquire</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="content" id="text">Scroll Past 500px</div>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('main-nav').querySelector('ul');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    }
+    const text = document.getElementById('text');
+    const switchHeight = 500; // the scroll height in px to trigger color switch
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > switchHeight) {
+        document.body.style.backgroundColor = 'black';
+        text.style.color = 'white';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        text.style.color = 'black';
+      }
+    });
   </script>
 
 </body>
