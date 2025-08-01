@@ -80,7 +80,7 @@ header {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
-  color: white !important;
+  color: white ;
   z-index: 500;
   transition: top 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
   padding-top: 100px;
